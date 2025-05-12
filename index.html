@@ -1,38 +1,87 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
-    <h1 class="font-norm-center">Velocity X - F1 in Schools team</h1>
-    <title>Velocity X</title>
-  </head>
-    <!--Use the below code snippet to provide real time updates to the live chat plugin without the need of copying and paste each time to your website when changes are made via PBX-->
-  <body>
+import { useEffect, useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
-  </body>
-</html>
-<style>
+export default function VelocityX() {
+  const [showRaceInfo, setShowRaceInfo] = useState(false);
 
+  return (
+    <main className="min-h-screen bg-gradient-to-br from-black to-gray-900 text-white p-4">
+      <motion.h1
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="text-4xl md:text-6xl font-bold text-center my-8"
+      >
+        Velocity X — F1 in Schools
+      </motion.h1>
 
+      <section className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.5, duration: 1 }}
+        >
+          <Card className="bg-gray-800 shadow-lg">
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-2">Who Are We?</h2>
+              <p>
+                We are Velocity X — an ambitious and innovative F1 in Schools team
+                racing towards the 2025 World Finals. Our passion for design,
+                engineering, and speed fuels our journey!
+              </p>
+            </CardContent>
+          </Card>
+        </motion.div>
 
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.5, duration: 1 }}
+        >
+          <Card className="bg-gray-800 shadow-lg">
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-2">Our Goals</h2>
+              <p>
+                From CAD design to wind tunnel testing, we aim to push the limits
+                of what a school team can achieve. We're focused on speed,
+                sustainability, and teamwork.
+              </p>
+            </CardContent>
+          </Card>
+        </motion.div>
+      </section>
 
-.font-norm-center  {
-  font-family: "Inconsolata", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  text-align: center;
-  font-variation-settings:
-    "wdth" 100;
+      <motion.div
+        className="text-center mt-10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 1 }}
+      >
+        <Button onClick={() => setShowRaceInfo(!showRaceInfo)} className="bg-red-600 hover:bg-red-700 text-white text-lg px-6 py-2">
+          {showRaceInfo ? "Hide" : "Show"} 2025 Race Info
+        </Button>
+      </motion.div>
+
+      {showRaceInfo && (
+        <motion.div
+          className="mt-6 max-w-xl mx-auto text-center"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <Card className="bg-blue-800">
+            <CardContent className="p-6">
+              <h3 className="text-2xl font-bold mb-2">2025 World Finals Location</h3>
+              <p className="text-lg">Singapore – Marina Bay, September 2025</p>
+              <p className="text-sm text-gray-200 mt-2">
+                Join us as we race under the city lights at one of the most iconic racing locations!
+              </p>
+            </CardContent>
+          </Card>
+        </motion.div>
+      )}
+    </main>
+  );
 }
-body {
-  font-family: "Inconsolata", serif;
-  font-optical-sizing: auto;
-  font-weight: 100;
-  font-style: normal;
-  text-align: center;
-  font-variation-settings:
-    "wdth" 100;
-}
-</style>
