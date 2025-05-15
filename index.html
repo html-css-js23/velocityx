@@ -96,6 +96,60 @@
     .hidden {
       display: none;
     }
+
+    .timeline {
+      max-width: 800px;
+      margin: 60px auto;
+      border-left: 4px solid #ff0000;
+      padding-left: 20px;
+    }
+
+    .timeline h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2em;
+    }
+
+    .event {
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .event::before {
+      content: '';
+      position: absolute;
+      left: -14px;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      background-color: red;
+      border-radius: 50%;
+    }
+
+    .event h3 {
+      margin: 0;
+      color: #ff5252;
+    }
+
+    .event p {
+      margin: 5px 0 0 0;
+      font-size: 0.95em;
+    }
+
+    footer {
+      text-align: center;
+      margin: 60px auto 20px auto;
+      font-size: 1em;
+    }
+
+    footer a {
+      color: #29b6f6;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -107,7 +161,7 @@
       <h2>Who Are We?</h2>
       <p>
         We are Velocity X — an ambitious and innovative F1 in Schools team racing
-        towards the 2025 World Finals. Our passion for design, engineering, and speed fuels our journey!
+        towards the 2025 Finals. Our passion for design, engineering, and speed fuels our journey!
       </p>
     </div>
 
@@ -125,10 +179,43 @@
   </div>
 
   <div class="race-info hidden" id="raceInfo">
-    <h3>2025 World Finals Location</h3>
+    <h3>2025 Finals Location</h3>
     <p><strong>Singapore – Marina Bay, September 2025</strong></p>
     <p>Join us as we race under the city lights at one of the most iconic racing locations!</p>
   </div>
+
+  <div class="timeline">
+    <h2>Our Journey</h2>
+
+    <div class="event">
+      <h3>January 2025</h3>
+      <p>Team formation and initial brainstorming sessions.</p>
+    </div>
+
+    <div class="event">
+      <h3>February 2025</h3>
+      <p>CAD design and car prototyping began.</p>
+    </div>
+
+    <div class="event">
+      <h3>March 2025</h3>
+      <p>Wind tunnel testing and performance refinement.</p>
+    </div>
+
+    <div class="event">
+      <h3>April 2025</h3>
+      <p>Marketing, sponsorship outreach, and branding completed.</p>
+    </div>
+
+    <div class="event">
+      <h3>September 2025</h3>
+      <p>Ready to race at the Finals in Singapore!</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>📧 Contact us: <a href="mailto:velocityxf1@gmail.com">velocityxf1@gmail.com</a></p>
+  </footer>
 
   <script>
     const btn = document.getElementById('toggleRaceBtn');
