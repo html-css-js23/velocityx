@@ -1,87 +1,144 @@
-import { useEffect, useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Velocity X — F1 in Schools</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #000, #1a1a1a);
+      color: white;
+      padding: 20px;
+    }
 
-export default function VelocityX() {
-  const [showRaceInfo, setShowRaceInfo] = useState(false);
+    h1 {
+      text-align: center;
+      font-size: 3em;
+      margin-top: 40px;
+      animation: fadeSlideDown 1s ease forwards;
+      opacity: 0;
+    }
 
-  return (
-    <main className="min-h-screen bg-gradient-to-br from-black to-gray-900 text-white p-4">
-      <motion.h1
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="text-4xl md:text-6xl font-bold text-center my-8"
-      >
-        Velocity X — F1 in Schools
-      </motion.h1>
+    @keyframes fadeSlideDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-      <section className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.5, duration: 1 }}
-        >
-          <Card className="bg-gray-800 shadow-lg">
-            <CardContent className="p-6">
-              <h2 className="text-2xl font-semibold mb-2">Who Are We?</h2>
-              <p>
-                We are Velocity X — an ambitious and innovative F1 in Schools team
-                racing towards the 2025 World Finals. Our passion for design,
-                engineering, and speed fuels our journey!
-              </p>
-            </CardContent>
-          </Card>
-        </motion.div>
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 1000px;
+      margin: 40px auto;
+    }
 
-        <motion.div
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.5, duration: 1 }}
-        >
-          <Card className="bg-gray-800 shadow-lg">
-            <CardContent className="p-6">
-              <h2 className="text-2xl font-semibold mb-2">Our Goals</h2>
-              <p>
-                From CAD design to wind tunnel testing, we aim to push the limits
-                of what a school team can achieve. We're focused on speed,
-                sustainability, and teamwork.
-              </p>
-            </CardContent>
-          </Card>
-        </motion.div>
-      </section>
+    .card {
+      background-color: #2d2d2d;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+      flex: 1;
+      min-width: 280px;
+      max-width: 450px;
+      animation: fadeIn 1s ease forwards;
+    }
 
-      <motion.div
-        className="text-center mt-10"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-      >
-        <Button onClick={() => setShowRaceInfo(!showRaceInfo)} className="bg-red-600 hover:bg-red-700 text-white text-lg px-6 py-2">
-          {showRaceInfo ? "Hide" : "Show"} 2025 Race Info
-        </Button>
-      </motion.div>
+    .card:nth-child(1) { animation-delay: 0.5s; }
+    .card:nth-child(2) { animation-delay: 0.8s; }
 
-      {showRaceInfo && (
-        <motion.div
-          className="mt-6 max-w-xl mx-auto text-center"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <Card className="bg-blue-800">
-            <CardContent className="p-6">
-              <h3 className="text-2xl font-bold mb-2">2025 World Finals Location</h3>
-              <p className="text-lg">Singapore – Marina Bay, September 2025</p>
-              <p className="text-sm text-gray-200 mt-2">
-                Join us as we race under the city lights at one of the most iconic racing locations!
-              </p>
-            </CardContent>
-          </Card>
-        </motion.div>
-      )}
-    </main>
-  );
-}
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .btn {
+      background-color: #d32f2f;
+      color: white;
+      padding: 12px 24px;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-top: 40px;
+    }
+
+    .btn:hover {
+      background-color: #b71c1c;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .race-info {
+      margin: 30px auto;
+      max-width: 600px;
+      background-color: #1565c0;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      animation: slideUp 0.8s ease forwards;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .race-info p {
+      margin: 10px 0;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Velocity X — F1 in Schools</h1>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Who Are We?</h2>
+      <p>
+        We are Velocity X — an ambitious and innovative F1 in Schools team racing
+        towards the 2025 World Finals. Our passion for design, engineering, and speed fuels our journey!
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Our Goals</h2>
+      <p>
+        From CAD design to wind tunnel testing, we aim to push the limits of what a school team can achieve.
+        We're focused on speed, sustainability, and teamwork.
+      </p>
+    </div>
+  </div>
+
+  <div class="center">
+    <button class="btn" id="toggleRaceBtn">Show 2025 Race Info</button>
+  </div>
+
+  <div class="race-info hidden" id="raceInfo">
+    <h3>2025 World Finals Location</h3>
+    <p><strong>Singapore – Marina Bay, September 2025</strong></p>
+    <p>Join us as we race under the city lights at one of the most iconic racing locations!</p>
+  </div>
+
+  <script>
+    const btn = document.getElementById('toggleRaceBtn');
+    const info = document.getElementById('raceInfo');
+
+    btn.addEventListener('click', () => {
+      info.classList.toggle('hidden');
+      btn.textContent = info.classList.contains('hidden') ? 'Show 2025 Race Info' : 'Hide 2025 Race Info';
+    });
+  </script>
+
+</body>
+</html>
