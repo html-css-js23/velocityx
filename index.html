@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Velocity X — F1 in Schools</title>
+  <title>Velocity X — F1 in Schools UAE</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom right, #000, #1a1a1a);
+      background: linear-gradient(to bottom right, #000000, #1f1f1f);
       color: white;
       padding: 20px;
     }
@@ -16,81 +16,38 @@
     h1 {
       text-align: center;
       font-size: 3em;
-      margin-top: 40px;
-      animation: fadeSlideDown 1s ease forwards;
-      opacity: 0;
-    }
-
-    @keyframes fadeSlideDown {
-      from { opacity: 0; transform: translateY(-50px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      max-width: 1000px;
-      margin: 40px auto;
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease-out;
     }
 
     .card {
       background-color: #2d2d2d;
       padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-      flex: 1;
-      min-width: 280px;
-      max-width: 450px;
-      animation: fadeIn 1s ease forwards;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
     }
 
-    .card:nth-child(1) { animation-delay: 0.5s; }
-    .card:nth-child(2) { animation-delay: 0.8s; }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+    .card h2 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: #ff3333;
     }
 
-    .btn {
-      background-color: #d32f2f;
+    .button {
+      display: block;
+      margin: 30px auto;
+      background-color: #e60000;
       color: white;
-      padding: 12px 24px;
-      font-size: 1.1em;
       border: none;
+      padding: 12px 20px;
+      font-size: 1em;
       border-radius: 6px;
       cursor: pointer;
-      transition: background 0.3s;
-      margin-top: 40px;
     }
 
-    .btn:hover {
-      background-color: #b71c1c;
-    }
-
-    .center {
-      text-align: center;
-    }
-
-    .race-info {
-      margin: 30px auto;
-      max-width: 600px;
-      background-color: #1565c0;
-      padding: 20px;
-      border-radius: 12px;
-      text-align: center;
-      animation: slideUp 0.8s ease forwards;
-    }
-
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(50px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .race-info p {
-      margin: 10px 0;
+    .button:hover {
+      background-color: #b80000;
     }
 
     .hidden {
@@ -98,134 +55,100 @@
     }
 
     .timeline {
+      margin: 40px auto;
       max-width: 800px;
-      margin: 60px auto;
-      border-left: 4px solid #ff0000;
+      border-left: 3px solid red;
       padding-left: 20px;
     }
 
-    .timeline h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      font-size: 2em;
-    }
-
-    .event {
-      margin-bottom: 30px;
+    .timeline-entry {
+      margin-bottom: 20px;
       position: relative;
     }
 
-    .event::before {
+    .timeline-entry::before {
       content: '';
-      position: absolute;
-      left: -14px;
-      top: 5px;
       width: 12px;
       height: 12px;
-      background-color: red;
+      background: red;
       border-radius: 50%;
+      position: absolute;
+      left: -27px;
+      top: 6px;
     }
 
-    .event h3 {
-      margin: 0;
-      color: #ff5252;
-    }
-
-    .event p {
-      margin: 5px 0 0 0;
-      font-size: 0.95em;
-    }
-
-    footer {
+    .email {
       text-align: center;
-      margin: 60px auto 20px auto;
-      font-size: 1em;
+      margin-top: 40px;
     }
 
-    footer a {
-      color: #29b6f6;
-      text-decoration: none;
-    }
-
-    footer a:hover {
+    a.email-link {
+      color: #ffffff;
+      font-weight: bold;
       text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
+  <h1>Velocity X — F1 in Schools UAE</h1>
 
-  <h1>Velocity X — F1 in Schools</h1>
-
-  <div class="grid">
-    <div class="card">
-      <h2>Who Are We?</h2>
-      <p>
-        We are Velocity X — an ambitious and innovative F1 in Schools team racing
-        towards the 2025 Finals. Our passion for design, engineering, and speed fuels our journey!
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>Our Goals</h2>
-      <p>
-        From CAD design to wind tunnel testing, we aim to push the limits of what a school team can achieve.
-        We're focused on speed, sustainability, and teamwork.
-      </p>
-    </div>
+  <div class="card">
+    <h2>Who Are We?</h2>
+    <p>We are Velocity X — an ambitious and innovative F1 in Schools team racing towards the 2025 UAE Finals. Our passion for design, engineering, and speed fuels our journey!</p>
   </div>
 
-  <div class="center">
-    <button class="btn" id="toggleRaceBtn">Show 2025 Race Info</button>
+  <div class="card">
+    <h2>Our Goals</h2>
+    <p>From CAD design to wind tunnel testing, we aim to push the limits of what a school team can achieve. We're focused on speed, sustainability, and teamwork.</p>
   </div>
 
-  <div class="race-info hidden" id="raceInfo">
-    <h3>2025 Finals Location</h3>
-    <p><strong>Singapore – Marina Bay, September 2025</strong></p>
-    <p>Join us as we race under the city lights at one of the most iconic racing locations!</p>
+  <button class="button" onclick="toggleRaceInfo()">Show 2025 UAE Finals Info</button>
+
+  <div id="race-info" class="card hidden">
+    <h2>2025 UAE Finals</h2>
+    <p>We're preparing for the 2025 F1 in Schools UAE Finals — it's going to be our biggest challenge yet!</p>
   </div>
 
   <div class="timeline">
-    <h2>Our Journey</h2>
-
-    <div class="event">
-      <h3>January 2025</h3>
-      <p>Team formation and initial brainstorming sessions.</p>
+    <div class="timeline-entry">
+      <h3>January – Team Formed</h3>
+      <p>Velocity X is born with a vision to innovate and compete.</p>
     </div>
-
-    <div class="event">
-      <h3>February 2025</h3>
-      <p>CAD design and car prototyping began.</p>
+    <div class="timeline-entry">
+      <h3>February – Design Phase</h3>
+      <p>We began drafting the car design using CAD tools.</p>
     </div>
-
-    <div class="event">
-      <h3>March 2025</h3>
-      <p>Wind tunnel testing and performance refinement.</p>
+    <div class="timeline-entry">
+      <h3>April – Testing Begins</h3>
+      <p>Started testing our prototypes and refining performance.</p>
     </div>
-
-    <div class="event">
-      <h3>April 2025</h3>
-      <p>Marketing, sponsorship outreach, and branding completed.</p>
-    </div>
-
-    <div class="event">
-      <h3>September 2025</h3>
-      <p>Ready to race at the Finals in Singapore!</p>
+    <div class="timeline-entry">
+      <h3>June – UAE Finals Prep</h3>
+      <p>Final car ready, documentation done, and energy high!</p>
     </div>
   </div>
 
-  <footer>
-    <p>📧 Contact us: <a href="mailto:velocityxf1@gmail.com">velocityxf1@gmail.com</a></p>
-  </footer>
+  <div class="email">
+    <p>Contact us: <a href="mailto:velocityx@schooldomain.com" class="email-link">velocityx@schooldomain.com</a></p>
+  </div>
 
   <script>
-    const btn = document.getElementById('toggleRaceBtn');
-    const info = document.getElementById('raceInfo');
-
-    btn.addEventListener('click', () => {
-      info.classList.toggle('hidden');
-      btn.textContent = info.classList.contains('hidden') ? 'Show 2025 Race Info' : 'Hide 2025 Race Info';
-    });
+    function toggleRaceInfo() {
+      const info = document.getElementById("race-info");
+      const btn = document.querySelector("button");
+      if (info.classList.contains("hidden")) {
+        info.classList.remove("hidden");
+        btn.innerText = "Hide 2025 UAE Finals Info";
+      } else {
+        info.classList.add("hidden");
+        btn.innerText = "Show 2025 UAE Finals Info";
+      }
+    }
   </script>
-
 </body>
 </html>
